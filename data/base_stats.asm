@@ -1,4 +1,3 @@
-BaseData::
 BaseData0::
 
 BulbasaurBaseData:: ; 0x1e4000
