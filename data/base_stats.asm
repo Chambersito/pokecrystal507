@@ -1,6 +1,6 @@
 BaseData0::
 
-BulbasaurBaseData:: ; 0x51424
+BulbasaurBaseData:: ; 0x1e4000
 	db BULBASAUR ; 001
 
 	db  45,  49,  49,  45,  65,  65
@@ -7782,3 +7782,16 @@ CelebiBaseData:: ; 0x53364
 	db %01000010
 	db %00000000
 	; end
+
+; Pokemon252BaseData::
+	; ds 32
+	
+; EGG
+	
+; Pokemon254BaseData::
+	; ds 32
+	
+; FF
+
+; Pokemon256BaseData::
+	; ds 32 * 254
