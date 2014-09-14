@@ -669,8 +669,8 @@ OverworldMapEnd::
 	
 	ds 12
 	
-SECTION "basestattables",WRAM0[$c840]
-BaseStatsTableNo:: ; c840
+SECTION "basedatatables",WRAM0[$c840]
+BaseDataTableNo:: ; c840
 	ds 1	
 
 SECTION "gfx2",WRAM0[$cd20]
