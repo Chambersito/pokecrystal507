@@ -1775,14 +1775,24 @@ GetBaseData:: ; 3856
 	rst Bankswitch
 	
 ; Egg doesn't have BaseData
+	ld a, [BaseDataTableNo] ; c840
+	and a 
+	jr nz, .table1 ; EGG is at BaseData table 0
 	ld a, [CurSpecies]
 	cp EGG
 	jr z, .egg
+      ; jr nz, .table0
 
 ; Get BaseData
-	dec a
-	ld bc, BaseData1 - BaseData0
+.table0
 	ld hl, BaseData
+	jr .ok
+.table1	
+	ld hl, BaseData256 ; take BaseData from the second table
+.ok	
+	ld bc, BaseData1 - BaseData0
+	ld a, [CurSpecies]
+	dec a
 	call AddNTimes
 	ld de, CurBaseData
 	ld bc, BaseData1 - BaseData0
