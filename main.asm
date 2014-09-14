@@ -60826,9 +60826,6 @@ Function513e0: ; 513e0
 	ret
 ; 51424
 
-BaseData::
-INCLUDE "data/base_stats.asm"
-
 PokemonNames::
 INCLUDE "data/pokemon_names.asm"
 
@@ -117754,6 +117751,9 @@ INCLUDE "tilesets/data_8.asm"
 
 
 SECTION "bank79", ROMX, BANK[$79]
+
+BaseData::
+INCLUDE "data/base_stats.asm"
 
 
 SECTION "bank7A", ROMX, BANK[$7A]
