@@ -4426,6 +4426,8 @@ OakSpeech: ; 0x5f99
 	call Function4b6
 	call ClearTileMap
 
+	xor a
+	ld [BaseStatsTableNo], a
 	ld a, WOOPER
 	ld [CurSpecies], a
 	ld [CurPartySpecies], a
@@ -12376,6 +12378,9 @@ Functiond906: ; d906
 	push hl
 	ld a, [CurPartySpecies]
 	ld [CurSpecies], a
+	ld a, [CurPartyLevel]
+	and $80 ; %10000000
+	ld [BaseStatsTableNo], a
 	call GetBaseData
 	ld a, [BaseDexNo]
 	ld [de], a
