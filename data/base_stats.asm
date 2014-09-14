@@ -1,3 +1,4 @@
+BaseData::
 BaseData0::
 
 BulbasaurBaseData:: ; 0x1e4000
@@ -7783,15 +7784,103 @@ CelebiBaseData:: ; 0x53364
 	db %00000000
 	; end
 
-; Pokemon252BaseData::
-	; ds 32
+Pokemon252BaseData::
+	db CELEBI ; 251
+
+	db 100, 100, 100, 100, 100, 100
+	;   hp  atk  def  spd  sat  sdf
+
+	db PSYCHIC, GRASS
+	db 45 ; catch rate
+	db 64 ; base exp
+	db NO_ITEM ; item 1
+	db MIRACLEBERRY ; item 2
+	db 255 ; gender
+	db 100 ; unknown
+	db 120 ; step cycles to hatch
+	db 5 ; unknown
+	dn 5 , 5 ; frontpic dimensions
+	db 0, 0, 0, 0 ; padding
+	db MEDIUM_SLOW ; growth rate
+	dn NO_EGGS, NO_EGGS ; egg groups
+
+	; tmhm
+	db %00100100
+	db %01011111
+	db %00111111
+	db %11110100
+	db %11010110
+	db %00001110
+	db %01000010
+	db %00000000
+	; end
 	
 ; EGG
+; irrelevant data
+	db CELEBI ; 251
+
+	db 100, 100, 100, 100, 100, 100
+	;   hp  atk  def  spd  sat  sdf
+
+	db PSYCHIC, GRASS
+	db 45 ; catch rate
+	db 64 ; base exp
+	db NO_ITEM ; item 1
+	db MIRACLEBERRY ; item 2
+	db 255 ; gender
+	db 100 ; unknown
+	db 120 ; step cycles to hatch
+	db 5 ; unknown
+	dn 5 , 5 ; frontpic dimensions
+	db 0, 0, 0, 0 ; padding
+	db MEDIUM_SLOW ; growth rate
+	dn NO_EGGS, NO_EGGS ; egg groups
+
+	; tmhm
+	db %00100100
+	db %01011111
+	db %00111111
+	db %11110100
+	db %11010110
+	db %00001110
+	db %01000010
+	db %00000000
+	; end
 	
-; Pokemon254BaseData::
-	; ds 32
+Pokemon254BaseData::
+	db CELEBI ; 251
+
+	db 100, 100, 100, 100, 100, 100
+	;   hp  atk  def  spd  sat  sdf
+
+	db PSYCHIC, GRASS
+	db 45 ; catch rate
+	db 64 ; base exp
+	db NO_ITEM ; item 1
+	db MIRACLEBERRY ; item 2
+	db 255 ; gender
+	db 100 ; unknown
+	db 120 ; step cycles to hatch
+	db 5 ; unknown
+	dn 5 , 5 ; frontpic dimensions
+	db 0, 0, 0, 0 ; padding
+	db MEDIUM_SLOW ; growth rate
+	dn NO_EGGS, NO_EGGS ; egg groups
+
+	; tmhm
+	db %00100100
+	db %01011111
+	db %00111111
+	db %11110100
+	db %11010110
+	db %00001110
+	db %01000010
+	db %00000000
+	; end
 	
 ; FF
 
+BaseData256::
+
 ; Pokemon256BaseData::
-	; ds 32 * 254
+; ds 32 * 254
