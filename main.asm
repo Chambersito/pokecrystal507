@@ -13067,12 +13067,19 @@ Functiondd64: ; dd64
 	ld a, [$d10b]
 	and a
 	ld a, [wBreedMon1Species]
+	ld b, a
+	ld a, [wBreedMon1Level] ; get tableNo. from wBreedMon1 struct
 	ld de, wBreedMon1Nick
 	jr z, .asm_dd86
 	ld a, [wBreedMon2Species]
+	ld b, a
+	ld a, [wBreedMon2Level] ; get tableNo. from wBreedMon2 struct
 	ld de, wBreedMon2Nick
 
 .asm_dd86
+	and $80 ; get highest bit of wBreedMonLevel 
+	ld [BaseDataTableNo], a
+	ld a, b
 	ld [hli], a
 	ld [CurSpecies], a
 	ld a, $ff
