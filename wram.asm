@@ -668,6 +668,10 @@ OverworldMap:: ; c800
 OverworldMapEnd::
 	
 	ds 12
+	
+SECTION "basestattables",WRAM0[$c840]
+BaseStatsTableNo:: ; c840
+	ds 1	
 
 SECTION "gfx2",WRAM0[$cd20]
 CreditsPos::
