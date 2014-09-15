@@ -669,8 +669,8 @@ OverworldMapEnd::
 	
 	ds 12
 	
-SECTION "basedatatables",WRAM0[$c840]
-BaseDataTableNo:: ; c840
+SECTION "pokemondatatable",WRAM0[$cd1f]
+TableNumber:: ; cd1f
 	ds 1	
 
 SECTION "gfx2",WRAM0[$cd20]

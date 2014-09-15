@@ -1774,7 +1774,7 @@ GetBaseData:: ; 3856
 	ld a, BANK(BaseData)
 	rst Bankswitch
 	
-	ld a, [BaseDataTableNo] ; c840
+	ld a, [TableNumber] ; cd1f
 	and a 
 	ld a, [CurSpecies]
 	jr nz, .table1 ; Egg is at table 0, we're done here if table is 1

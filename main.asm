@@ -4427,7 +4427,7 @@ OakSpeech: ; 0x5f99
 	call ClearTileMap
 
 	xor a
-	ld [BaseStatsTableNo], a
+	ld [TableNumber], a
 	ld a, WOOPER
 	ld [CurSpecies], a
 	ld [CurPartySpecies], a
@@ -12380,7 +12380,7 @@ Functiond906: ; d906
 	ld [CurSpecies], a
 	ld a, [CurPartyLevel]
 	and $80 ; %10000000
-	ld [BaseStatsTableNo], a
+	ld [TableNumber], a
 	call GetBaseData
 	ld a, [BaseDexNo]
 	ld [de], a
@@ -13068,17 +13068,17 @@ Functiondd64: ; dd64
 	and a
 	ld a, [wBreedMon1Species]
 	ld b, a
-	ld a, [wBreedMon1Level] ; get tableNo. from wBreedMon1 struct
+	ld a, [wBreedMon1Level] ; get TableNumber from wBreedMon1 struct
 	ld de, wBreedMon1Nick
 	jr z, .asm_dd86
 	ld a, [wBreedMon2Species]
 	ld b, a
-	ld a, [wBreedMon2Level] ; get tableNo. from wBreedMon2 struct
+	ld a, [wBreedMon2Level] ; get TableNumber from wBreedMon2 struct
 	ld de, wBreedMon2Nick
 
 .asm_dd86
 	and $80 ; get highest bit of wBreedMonLevel 
-	ld [BaseDataTableNo], a
+	ld [TableNumber], a
 	ld a, b
 	ld [hli], a
 	ld [CurSpecies], a
