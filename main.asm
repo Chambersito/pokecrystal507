@@ -13205,9 +13205,12 @@ Functionde6e: ; de6e
 	ld de, sBoxCount
 	ld a, [de]
 	cp MONS_PER_BOX
-	jp nc, Functiondf42
+	jp nc, Functiondf42 ; jump if the limit was reached
 	inc a
-	ld [de], a
+	ld [de], a ; inc number of mons in box
+	ld a, [CurPartyLevel]
+	and $80
+	ld [TableNumber], a
 	ld a, [CurPartySpecies]
 	ld [CurSpecies], a
 	ld c, a
@@ -13218,7 +13221,7 @@ Functionde6e: ; de6e
 	ld a, c
 	ld c, b
 	ld [de], a
-	inc a
+	inc a ; loop until CurPartySpecies = $ff
 	jr nz, .asm_de85
 	call GetBaseData
 	call ShiftBoxMon
