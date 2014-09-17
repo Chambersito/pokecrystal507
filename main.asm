@@ -13615,10 +13615,15 @@ Functione134: ; e134
 	call GetPartyParamLocation
 	ld a, [hl]
 	ld [$001f], a
-	ld a, $0
+	ld a, $0 ; ld a, SPECIES
 	call GetPartyParamLocation
 	ld a, [hl]
 	ld [CurSpecies], a
+	ld a, PartyMon1Level - PartyMon1 ; ld a, LEVEL
+	call GetPartyParamLocation ; get TableNumber too
+	ld a, [hl]
+	and $80
+	ld [TableNumber], a
 	call GetBaseData
 	ld a, $24
 	call GetPartyParamLocation
