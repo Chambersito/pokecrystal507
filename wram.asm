@@ -669,10 +669,6 @@ OverworldMapEnd::
 	
 	ds 12
 	
-SECTION "pokemondatatable",WRAM0[$cd1f]
-TableNumber:: ; cd1f
-	ds 1	
-
 SECTION "gfx2",WRAM0[$cd20]
 CreditsPos::
 BGMapBuffer:: ; cd20
@@ -802,7 +798,11 @@ Options2:: ; cfd1
 ; bit 1: menu account off/on
 	ds 1
 
-	ds 46
+SECTION "pokemondatatable",WRAM0[$cfd2]
+TableNumber:: ; cfd2
+	ds 1	
+
+	ds 45
 	
 
 SECTION "WRAMBank1",WRAMX[$d000],BANK[1]
