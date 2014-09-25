@@ -13077,9 +13077,9 @@ Functiondd64: ; dd64
 	ld de, wBreedMon2Nick
 
 .asm_dd86
-	and $80 ; get highest bit of wBreedMonLevel 
+	and $80 ; get highest bit of wBreedMonLevel
 	ld [TableNumber], a
-	ld a, b
+	ld a, b 
 	ld [hli], a
 	ld [CurSpecies], a
 	ld a, $ff
@@ -117774,7 +117774,6 @@ SECTION "bank79", ROMX, BANK[$79]
 
 BaseData::
 INCLUDE "data/base_stats.asm"
-
 
 SECTION "bank7A", ROMX, BANK[$7A]
 
